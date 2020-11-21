@@ -12,7 +12,7 @@ def get_data(id = None):
     r = requests.get(url=URL, data = json_data)
     data = r.json()
     print(data)
-
+# when you want to get data 
 # get_data(5)
 
 def post_data(): # used to create data 
