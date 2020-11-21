@@ -75,3 +75,24 @@ def student_api(request):
         JsonResponse(res, safe=False)
 
 
+
+# *********************************              Class based view                   ***************************************
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class StudentApi(View):
+    def get(self,*args, **kwargs):
+        json_data = request.body
+        stream = io.BytesIO(json_data)     # A stream implementation using an in-memory bytes buffer.It inherits BufferedIoBase.The Buffer is discarded when the close() method is called 
+        pythondata = JSONParser().parse(stream)
+        id = pythondata.get('id',None)
+        if id is not None:
+            stu = Student.objects.get(id =id)
+            serializer = studentSerializer(stu)
+            json_data = JSONRenderer().render(serializer.data)
+            return HttpResponse(json_data, content_type = 'application/json')
+
+        stu = Student.objects.get(id =id)
+        serializer = studentSerializer(stu)
+        json_data = JSONRenderer().render(serializer.data)
+        return HttpResponse(json_data, content_type = 'application/json')
