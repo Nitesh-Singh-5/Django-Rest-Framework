@@ -28,6 +28,7 @@ def post_data(): # used to create data
     data = r.json()
     print(data) 
 
+#when you want to add data
 post_data()
 
 def update_data():
