@@ -44,7 +44,7 @@ def update_data():
 
 # update_data()
 
-def delete_data():
+def delete_data() :
     data = {'id':8}
 
     json_data = json.dumps(data)
