@@ -24,7 +24,7 @@ def post_data(): # used to create data
 
     json_data = json.dumps(data)
 
-    r = requests.post(url = URL, data = json_data)
+    r = requests.post(url = URL , data = json_data)
     data = r.json()
     print(data) 
 
