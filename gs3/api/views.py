@@ -1,4 +1,9 @@
-
+from django.shortcuts import render
+from rest_framework.decorators import api_view
+from rest_framework.response import Response 
+from .models import Student
+from .serializers import StudentSerializer
+from rest_framework import status
 
 @api_view(['GET','POST','PUT','PATCH','DELETE'])
 def student_api(request):
