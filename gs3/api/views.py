@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_vi     ew
+from rest_framework.decorators import api_vi    ew
 from rest_framework.response import Response
 from .models import Student
 from .serializers import StudentSerializer
